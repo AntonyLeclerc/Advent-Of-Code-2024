@@ -52,10 +52,6 @@ def fixUpdate(update, violations):
 cpt = 0
 for update in sec2:
     
-    if (cpt % 10 == 0):
-        print(f"{cpt=}")
-
-    
     isOk, violations = isUpdateOk(update)
     
     if isOk:
