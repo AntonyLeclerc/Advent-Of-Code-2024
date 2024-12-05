@@ -1,6 +1,8 @@
 import numpy as np
 import re
 import copy
+import time 
+
 with open("puzzle.txt") as f:
     doc = f.read()
 
@@ -50,6 +52,8 @@ def fixUpdate(update, violations):
 
 
 cpt = 0
+
+t1 = time.process_time()
 for update in sec2:
     
     isOk, violations = isUpdateOk(update)
@@ -66,7 +70,10 @@ for update in sec2:
 
         result2 += int(tmp[len(tmp) // 2])
 
-    cpt += 1
+t2 = time.process_time()
+
       
 print(f"{result=}")
-print(f"{result2=}")            
+print(f"{result2=}")      
+
+print(f"Temps : {t2-t1}")
